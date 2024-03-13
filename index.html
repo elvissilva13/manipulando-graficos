@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <title>Manipulando graficos</title>
+</head>
+<body>
+    <div style="width: 500px; height: 500px;" >
+        <canvas id="myChart"></canvas>
+      </div>
+
+      <div>
+        <canvas id="id2"></canvas>
+      </div>
+      
+      <script>
+        const ctx = document.getElementById('myChart');
+        const chats=document.getElementById('id2');
+        let labelX = ["Brasil" , "Argentina" , "Chile", "Paraguai"]
+        let dataY=[1,5,7,4]
+
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: labelX,
+            datasets: [{
+              label: '# of Votes',
+              data: dataY,
+              borderWidth: 1 
+
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+
+    
+ 
+      </script>
+
+</body>
+</html>
